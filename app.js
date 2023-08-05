@@ -12,6 +12,8 @@ const contactContent = "You can contact me at <i style='color:blue;'>koushaljha8
 
 const app = express();
 
+var posts = [];
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
