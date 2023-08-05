@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+<% if(locals.post){ %>
+  <h1>Update Blog</h1>
+  <form action="/updateBlog" method="post">
+        <label>Title</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          value=<%= post.blogTitle %>
+        />
+        <label>Post</label>
+        <textarea class="form-control" name="post" rows="3" ><%= post.blogPost %></textarea>
+        <input
+          type="text"
+          class="form-control"
+          name="id"
+          value=<%= post._id%>
+          style="display:none;"
+        />
+      <button type="submit" class="btn btn-primary mt-2">Update</button>
+    </form>
+  <% }else{ %>
+  <h1>Add Blog</h1>
+  <form action="/submitCompose" method="post">
+        <label  name="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+        />
+        <label>Post</label>
+        <textarea class="form-control" name="post" rows="3"></textarea>
+      <button type="submit" class="btn btn-primary mt-2">Publish</button>
+    </form>
+  <% } %>
+<%- include("partials/footer.ejs") %>

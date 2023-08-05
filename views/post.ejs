@@ -1,0 +1,8 @@
+<%- include("partials/header.ejs") %>
+<% if(locals.posts){ %>
+    <h1><%= posts.blogTitle %></h1>
+    <p><%= posts.blogPost %></p>
+<% }else { %>
+    <h1 id="post_not_found">There is No Post with <%= entered_post_name %> , Please create it first.</h1>
+<% } %>
+<%- include("partials/footer.ejs") %>
